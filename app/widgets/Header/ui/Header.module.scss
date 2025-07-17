@@ -1,0 +1,139 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #00001b;
+  color: white;
+  width: 100%;
+
+  &-contacts {
+    background-color: #293133;
+    display: flex;
+    list-style: none;
+    padding: 5px 10%;
+    gap: 15px;
+    margin: 0;
+
+    &__data {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      &:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &-logo {
+    padding: 10px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid red;
+
+    &__title {
+      display: flex;
+      align-items: center;
+      height: 100px;
+      font-size: clamp(30px, 5vw, 50px);
+    }
+
+    &__block {
+      display: flex;
+      width: 400px;
+      height: 80px;
+      background-color: #808080;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+  }
+
+  &-navigation {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 20px 10%;
+    gap: 20px;
+    font-size: 16px;
+    border-bottom: 2px solid rgb(161 160 160);
+  }
+}
+
+@media (width <= 900px) {
+  .header {
+    &-logo {
+      &__title {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+@media (width <= 768px) {
+  .header {
+    position: static;
+
+    &-contacts {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 5%;
+
+      &__data:last-child {
+        margin-left: 0;
+      }
+    }
+
+    &-logo {
+      flex-direction: column;
+      padding: 15px 5%;
+
+      &__title {
+        height: auto;
+        margin-bottom: 15px;
+        font-size: clamp(26px, 5vw, 40px);
+      }
+
+      &__block {
+        width: 100%;
+      }
+    }
+
+    &-navigation {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 15px 5%;
+    }
+  }
+}
+
+@media (width <= 480px) {
+  .header {
+    &-contacts,
+    &-logo,
+    &-navigation {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    &-logo {
+      &__title {
+        font-size: clamp(24px, 5vw, 32px);
+      }
+
+      &__block {
+        height: 60px;
+      }
+    }
+  }
+}

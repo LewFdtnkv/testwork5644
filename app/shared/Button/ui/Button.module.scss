@@ -1,0 +1,28 @@
+.LogInWindow-button {
+  cursor: pointer;
+  width: 423px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
+  font-size: 16px;
+}
+
+.Card-button {
+  cursor: pointer;
+  width: clamp(200px, 30vw, 300px);
+  padding: 10px;
+  background-color: cadetblue;
+  font-size: clamp(14px, 2vw, 16px);
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+@media (width <= 768px) {
+  .LogInWindow-button {
+    width: calc(60% + 20px);
+    font-size: 14px;
+  }
+}
